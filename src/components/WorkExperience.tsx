@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { motion } from 'framer-motion'
 import {ExperienceCard} from './ExperienceCard'
-import { Experience } from 'typings'
+import { Experiences } from 'typings'
 
 type Props = {
-  experiences: Experience[]
+  experiences: Experiences[]
 }
 
 export function WorkExperience({experiences}: Props) {

@@ -1,10 +1,10 @@
 import * as React from 'react'
 import { motion } from 'framer-motion'
-import { Skill } from 'typings'
+import { Skills } from 'typings'
 import {PersonalSkill} from './PersonalSkill'
 
 type Props = {
-    skills: Skill[]
+    skills: Skills[]
 }
 
 export function Skills({skills}: Props) {

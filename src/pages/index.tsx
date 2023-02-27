@@ -4,12 +4,12 @@ import {Header} from '@/components/Header'
 import {Hero} from '@/components/Hero'
 import {About} from '@/components/About'
 import {WorkExperience} from '@/components/WorkExperience'
-import {Skills} from '@/components/Skills'
-import {Projects} from '@/components/Projects'
+import {Skills as SkillsType} from '@/components/Skills'
+import {Projects as ProjectsType} from '@/components/Projects'
 import {ContactMe} from '@/components/ContactMe'
 import Link from 'next/link'
 import Image from 'next/image'
-import { Experience, PageInfo, Project, Skill, Social } from 'typings'
+import { Experiences, PageInfo, Projects, Skills, Socials } from 'typings'
 import { fetchPageInfo } from 'utils/fetchPageInfo'
 import { fetchExperiences } from 'utils/fetchExperiences'
 import { fetchSkills } from 'utils/fetchSkills'
@@ -18,10 +18,10 @@ import { fetchSocials } from 'utils/fetchSocials'
 
 type Props = {
   pageInfo: PageInfo;
-  experiences: Experience[];
-  skills: Skill[];
-  projects: Project[];
-  socials: Social[];
+  experiences: Experiences[];
+  skills: Skills[];
+  projects: Projects[];
+  socials: Socials[];
 }
 
 export const Home = ({pageInfo, experiences, projects, skills, socials}: Props) => {
@@ -48,11 +48,11 @@ export const Home = ({pageInfo, experiences, projects, skills, socials}: Props) 
       </section>
 
       <section id='skills' className='snap-start'>
-        <Skills skills={skills} />
+        <SkillsType skills={skills} />
       </section>
 
       <section id='projects' className='snap-start'>
-        <Projects projects={projects} />
+        <ProjectsType projects={projects} />
       </section>
 
       <section id='contact' className='snap-start'>
@@ -78,10 +78,10 @@ export default Home
 
 export const getStaticProps: GetStaticProps<Props> = async() => {
   const pageInfo: PageInfo = await fetchPageInfo()
-  const experiences: Experience[] = await fetchExperiences()
-  const skills: Skill[] = await fetchSkills()
-  const projects: Project[] = await fetchProjects()
-  const socials: Social[] = await fetchSocials()
+  const experiences: Experiences[] = await fetchExperiences()
+  const skills: Skills[] = await fetchSkills()
+  const projects: Projects[] = await fetchProjects()
+  const socials: Socials[] = await fetchSocials()
 
   return {
     props: {

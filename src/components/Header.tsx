@@ -2,10 +2,10 @@ import * as React from 'react'
 import { SocialIcon } from 'react-social-icons'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Social } from 'typings'
+import { Socials } from 'typings'
 
 type Props = {
-  socials: Social[]
+  socials: Socials[]
 }
 
 export function Header({socials}: Props) {
