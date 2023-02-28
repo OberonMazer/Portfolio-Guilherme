@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { motion } from 'framer-motion'
 import { Projects } from 'typings'
-import { urlFor } from 'sanity'
+import { urlFor } from '../../sanity'
 import Image from 'next/image'
 
 type Props = {

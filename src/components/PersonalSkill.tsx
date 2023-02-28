@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { motion } from 'framer-motion'
 import { Skills } from 'typings'
-import { urlFor } from 'sanity'
+import { urlFor } from '../../sanity'
 
 type Props = {
     skill: Skills
