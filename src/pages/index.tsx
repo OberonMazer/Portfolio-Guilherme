@@ -62,7 +62,7 @@ export const Home = ({pageInfo, experiences, projects, skills, socials}: Props) 
       <Link href='#hero'>
       <footer className='sticky bottom-5 w-full cursor-pointer'>
         <div className='flex items-right justify-right'>
-          <Image 
+          <img 
           className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
           src='https://imgs.search.brave.com/6WrEfQneHVe_sGBlr26JEXhD3WZEHyXi_aw9L2xEzB8/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/ZnJlZXBuZ2xvZ29z/LmNvbS91cGxvYWRz/L2xvZ28taG9tZS1w/bmcvY2hpbW5leS1o/b21lLWljb24tdHJh/bnNwYXJlbnQtMS5w/bmc'
           alt=''/>

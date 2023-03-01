@@ -30,7 +30,7 @@ export function Projects({projects}: Props) {
         <div className='relative w-full flex overflow-x-scroll overflow-y-hidden snap-x
         snap-mandatory z-20 scrollbar-thin scrollbar-track-gray-400/20 scrollbar-thumb-[#F7AB0A]/80'>
             {projects?.map((project, i) => (
-                <div className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5
+                <div key={project._id} className='w-screen flex-shrink-0 snap-center flex flex-col space-y-5
                 items-center justify-center p-20 md:p-44 h-screen'>
                     <motion.img
                     initial={{
@@ -60,7 +60,7 @@ export function Projects({projects}: Props) {
 
                     <div className='flex items-center space-x-2 justify-center'>
                         {project?.technologies.map((technology) => (
-                            <Image
+                            <img
                             className='h-10 w-10'
                             key={technology._id}
                             src={urlFor(technology.image).url()}
