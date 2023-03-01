@@ -8,7 +8,6 @@ import {Skills as SkillsType} from '@/components/Skills'
 import {Projects as ProjectsType} from '@/components/Projects'
 import {ContactMe} from '@/components/ContactMe'
 import Link from 'next/link'
-import Image from 'next/image'
 import { Experiences, PageInfo, Projects, Skills, Socials } from 'typings'
 import { fetchPageInfo } from 'utils/fetchPageInfo'
 import { fetchExperiences } from 'utils/fetchExperiences'
@@ -30,7 +29,7 @@ export const Home = ({pageInfo, experiences, projects, skills, socials}: Props) 
     overflow-y-scroll overflow-x-hidden z-0 scrollbar scrollbar-track-gray-400/20
     scrollbar-thumb-[#F7AB0A]/80'>
       <Head>
-        <title>Guilherme`s Portfolio</title>
+        <title>{pageInfo?.name} - Portfolio</title>
       </Head>
 
       <Header socials={socials}/>
@@ -76,7 +75,7 @@ export const Home = ({pageInfo, experiences, projects, skills, socials}: Props) 
 export default Home
 
 
-export const getStaticProps: GetStaticProps<Props> = async() => {
+export const getServerSideProps: GetStaticProps<Props> = async() => {
   const pageInfo: PageInfo = await fetchPageInfo()
   const experiences: Experiences[] = await fetchExperiences()
   const skills: Skills[] = await fetchSkills()
