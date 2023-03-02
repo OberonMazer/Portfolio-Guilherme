@@ -60,16 +60,19 @@ export function Projects({projects}: Props) {
 
                     <div className='flex items-center space-x-2 justify-center'>
                         {project?.technologies.map((technology) => (
-                            <img
+                            <Image
                             className='h-10 w-10'
                             key={technology._id}
                             src={urlFor(technology.image).url()}
                             alt=''
+                            width={100}
+                            height={100}
+                            unoptimized={true}
                             />
                         ))}
                     </div>
 
-                        <p className='text-lg text-center md:text-left'>
+                        <p className='text-lg text-center md:text-center underline decoration-[#F7AB0A]/50'>
                             {project?.summary}
                         </p>
                     </div>

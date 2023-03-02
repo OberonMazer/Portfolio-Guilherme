@@ -25,11 +25,13 @@ export function Hero({pageInfo}: Props) {
     <div className='h-screen flex flex-col space-y-8 items-center justify-center
     text-center overflow-hidden'>
         <BackgroundCircles/>
-        <img className='relative rounded-full h-32 w-32 mx-auto object-cover'
+        <Image className='relative rounded-full h-32 w-32 mx-auto object-cover'
         src={urlFor(pageInfo?.heroImage).url()}
         width={100}
         height={100}
-        alt=''/>
+        alt=''
+        unoptimized={true}
+        />
         <div className='z-20'>
           <h2 className='text-sm uppercase text-gray-500 pb-2 tracking-[15px]'>
             {pageInfo?.role}

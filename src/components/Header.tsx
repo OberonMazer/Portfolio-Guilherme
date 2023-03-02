@@ -3,6 +3,8 @@ import { SocialIcon } from 'react-social-icons'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { Socials } from 'typings'
+import Image from 'next/image'
+import GrayEmailLogo from '../images/grayemaillogo.png'
 
 type Props = {
   socials: Socials[]
@@ -52,19 +54,23 @@ export function Header({socials}: Props) {
       transition={{
         duration: 1.5
       }}
+      
       className='flex flex-row items-center text-gray-300 cursor-pointer'>
-
-        <SocialIcon
-        className='cursor-pointer'
-        network='email'
-        fgColor='gray' 
-        bgColor='transparent'
+       <Image 
+        src={GrayEmailLogo}
+        alt=''
+        width={20}
+        height={20}
         />
         <div className='uppercase hidden md:inline-flex text-sm text-gray-400'>
           Contact Me
         </div>
+
+
       </motion.div>
       </Link>
+    
+        
     </header>
   )
 }

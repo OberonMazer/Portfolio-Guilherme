@@ -14,6 +14,8 @@ import { fetchExperiences } from 'utils/fetchExperiences'
 import { fetchSkills } from 'utils/fetchSkills'
 import { fetchProjects } from 'utils/fetchProjects'
 import { fetchSocials } from 'utils/fetchSocials'
+import Image from 'next/image'
+import HomeLogo from '../images/homelogo.png'
 
 type Props = {
   pageInfo: PageInfo;
@@ -60,11 +62,13 @@ export const Home = ({pageInfo, experiences, projects, skills, socials}: Props) 
 
       <Link href='#hero'>
       <footer className='sticky bottom-5 w-full cursor-pointer'>
-        <div className='flex items-right justify-right'>
-          <img 
+        <div className='flex items-center justify-left'>
+          <Image 
           className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
-          src='https://imgs.search.brave.com/6WrEfQneHVe_sGBlr26JEXhD3WZEHyXi_aw9L2xEzB8/rs:fit:1200:1200:1/g:ce/aHR0cHM6Ly93d3cu/ZnJlZXBuZ2xvZ29z/LmNvbS91cGxvYWRz/L2xvZ28taG9tZS1w/bmcvY2hpbW5leS1o/b21lLWljb24tdHJh/bnNwYXJlbnQtMS5w/bmc'
-          alt=''/>
+          src={HomeLogo}
+          alt=''
+          unoptimized={true}
+          />
         </div>
       </footer>
       </Link>
@@ -75,7 +79,7 @@ export const Home = ({pageInfo, experiences, projects, skills, socials}: Props) 
 export default Home
 
 
-export const getServerSideProps: GetStaticProps<Props> = async() => {
+export const getStaticProps: GetStaticProps<Props> = async() => {
   const pageInfo: PageInfo = await fetchPageInfo()
   const experiences: Experiences[] = await fetchExperiences()
   const skills: Skills[] = await fetchSkills()
