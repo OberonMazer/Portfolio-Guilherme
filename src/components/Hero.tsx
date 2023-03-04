@@ -15,7 +15,7 @@ export function Hero({pageInfo}: Props) {
         words: [
             `Hi, I'm ${pageInfo?.name}`,
             "Freelancer", 
-            "Designer", 
+            "Web Designer", 
             "Full-Stack Dev"
         ],
         loop: true,
