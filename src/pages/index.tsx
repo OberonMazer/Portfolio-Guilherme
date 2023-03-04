@@ -7,15 +7,12 @@ import {WorkExperience} from '@/components/WorkExperience'
 import {Skills as SkillsType} from '@/components/Skills'
 import {Projects as ProjectsType} from '@/components/Projects'
 import {ContactMe} from '@/components/ContactMe'
-import Link from 'next/link'
 import { Experiences, PageInfo, Projects, Skills, Socials } from 'typings'
 import { fetchPageInfo } from 'utils/fetchPageInfo'
 import { fetchExperiences } from 'utils/fetchExperiences'
 import { fetchSkills } from 'utils/fetchSkills'
 import { fetchProjects } from 'utils/fetchProjects'
 import { fetchSocials } from 'utils/fetchSocials'
-import Image from 'next/image'
-import HomeLogo from '../images/homelogo.png'
 
 type Props = {
   pageInfo: PageInfo;
