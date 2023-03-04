@@ -2,9 +2,10 @@ import * as React from 'react'
 import { SocialIcon } from 'react-social-icons'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { Socials } from 'typings'
+import { Socials } from '../../typings'
 import Image from 'next/image'
 import GrayEmailLogo from '../images/grayemaillogo.png'
+import HomeLogo from '../images/homelogo.png'
 
 type Props = {
   socials: Socials[]
@@ -42,12 +43,12 @@ export function Header({socials}: Props) {
       <Link href='#contact'>
       <motion.div 
       initial={{
-        x: 500,
+        x: 600,
         opacity: 0,
         scale: 0.5
       }}
       animate={{
-        x: 0,
+        x: 430,
         opacity: 1,
         scale: 1
       }}
@@ -66,10 +67,38 @@ export function Header({socials}: Props) {
           Contact Me
         </div>
 
+      </motion.div>
+      </Link>
+
+      <Link href='#hero'>
+      <motion.div 
+      initial={{
+        x: 400,
+        opacity: 0,
+        scale: 0.5
+      }}
+      animate={{
+        x: 0,
+        opacity: 1,
+        scale: 1
+      }}
+      transition={{
+        duration: 1.5
+      }}
+      
+      className='flex flex-row items-center text-gray-300 cursor-pointer'>
+
+        <Image 
+        className='ml-4'
+        src={HomeLogo}
+        alt=''
+        width={25}
+        height={25}
+        />
 
       </motion.div>
       </Link>
-    
+      
         
     </header>
   )

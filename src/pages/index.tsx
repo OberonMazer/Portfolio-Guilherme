@@ -59,25 +59,11 @@ export const Home = ({pageInfo, experiences, projects, skills, socials}: Props) 
       <section id='contact' className='snap-start'>
         <ContactMe />
       </section>
-
-      <Link href='#hero'>
-      <footer className='sticky bottom-5 w-full cursor-pointer'>
-        <div className='flex items-center justify-left'>
-          <Image 
-          className='h-10 w-10 rounded-full filter grayscale hover:grayscale-0 cursor-pointer'
-          src={HomeLogo}
-          alt=''
-          unoptimized={true}
-          />
-        </div>
-      </footer>
-      </Link>
     </div>
   )
 }
 
 export default Home
-
 
 export const getStaticProps: GetStaticProps<Props> = async() => {
   const pageInfo: PageInfo = await fetchPageInfo()

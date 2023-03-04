@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { motion } from 'framer-motion'
-import { Skills } from 'typings'
+import { Skills } from '../../typings'
 import { urlFor } from '../../sanity'
 
 type Props = {

@@ -1,12 +1,32 @@
 import { Skills } from "typings";
+import type { NextApiRequest, NextApiResponse } from "next";
+import { groq } from "next-sanity";
+import { sanityClient } from "../sanity";
 
 export const fetchSkills = async() => {
-    const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getSkills`)
+    const res = await sanityClient.fetch(query)
 
-    const data = await res.json()
-    const skills: Skills[] = data.skills
+    const skills: Skills[] = res
 
     //console.log("fetching", skills)
 
     return skills
 }
+
+const query = groq`
+*[_type == "skill"]{
+  ...,
+}
+`
+
+type Data = {
+    skills: Skills[]
+}
+
+export default async function handler(
+    req: NextApiRequest,
+    res: NextApiResponse<Data>
+  ) {
+    const skills: Skills[] = await sanityClient.fetch(query)
+    res.status(200).json({ skills })
+  }
