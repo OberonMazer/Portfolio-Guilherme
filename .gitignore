@@ -21,6 +21,9 @@ sanity/node_modules
 .DS_Store
 *.pem
 
+# local env files
+.env*.local
+
 # debug
 npm-debug.log*
 yarn-debug.log*
