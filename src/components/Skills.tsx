@@ -40,4 +40,3 @@ export function Skills({skills}: Props) {
     </motion.div>
   )
 }
-

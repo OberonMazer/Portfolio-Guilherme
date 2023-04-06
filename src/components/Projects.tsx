@@ -8,6 +8,7 @@ type Props = {
     projects: Projects[]
 }
 
+
 export function Projects({projects}: Props) {
   return (
     <motion.div 
@@ -85,4 +86,3 @@ export function Projects({projects}: Props) {
     </motion.div>
   )
 }
-
